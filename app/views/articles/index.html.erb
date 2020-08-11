@@ -1,0 +1,19 @@
+<div class="header">
+  <div class="title">
+    <h2><%= link_to "Wikinimous", articles_path %></h2>
+  </div>
+  <div class="new article">
+    <%= link_to "New article", new_article_path %>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-8 col-sm-offset-2"></div>
+    <ul>
+      <% @articles.each do |article| %>
+        <li><%= link_to article.title %>
+        <li><%= article.content.first(70) %></li>
+      <% end %>
+    </ul>
+  </div>
+</div>
